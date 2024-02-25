@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Link, Outlet, useLocation, useParams } from "react-router-dom";
 import { MovieTitle, Container, AboutMovie, MovieInfo, Button } from "./MovieDetails.styled";
 
 const MovieDetails = () => {
@@ -8,6 +8,7 @@ const MovieDetails = () => {
   const [error, setError] = useState(null);
   const location = useLocation();
   const backLinkRef = useRef(location.state?.from ?? "/movies");
+  const [activeLink, setActiveLink] = useState(null)
 
   const options = {
     method: "GET",
@@ -43,6 +44,8 @@ const MovieDetails = () => {
     return <div>Loading...</div>;
   }
 
+
+
   const { title, original_title, name, overview, status, vote_average, poster_path, genres } = data;
 
   return (
@@ -64,6 +67,19 @@ const MovieDetails = () => {
           </ul>
         </MovieInfo>
       </AboutMovie>
+      <h3>Additional information</h3>
+      <ul>
+        <li>
+            <Link to='cast'>Cast</Link>
+
+        </li>
+
+        <li>
+            <Link to='reviews'>Reviews</Link>
+        </li>
+
+      </ul>
+      <Outlet/>
     </Container>
   );
 };

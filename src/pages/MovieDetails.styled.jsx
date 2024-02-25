@@ -5,6 +5,7 @@ export const MovieTitle = styled.h2`
 
 export const Container = styled.div `
     margin-top: 15px;
+    margin-left: 15px;
 `
 
 export const Button = styled.button`
@@ -23,7 +24,6 @@ export const Button = styled.button`
 
 export const AboutMovie = styled.div`
     display: flex;
-    margin-left: 15px;
     margin-top: 15px;
 `
 

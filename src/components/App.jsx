@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom"
 import Layout from "./Layout"
 import Home from "pages/Home"
 import MovieDetails from "pages/MovieDetails"
+import Cast from "./Cast"
 
 const App = () => {
 
@@ -11,7 +12,7 @@ const App = () => {
         <Route index element={<Home />} />
         <Route path="movies" element={<div>movies</div>} />
         <Route path="movies/:movieId" element={<MovieDetails />}>
-          <Route path="cast" element={<div>cast</div>} />
+          <Route path="cast" element={<Cast/>} />
           <Route path="reviews" element={<div>reviews</div>} />
         </Route>
       </Route>
