@@ -1,13 +1,14 @@
-const { NavLink, Outlet } = require("react-router-dom")
+import {StyledNavLink} from './Layout.styled'
 
+const { NavLink, Outlet } = require("react-router-dom")
 const Layout = () => {
 
 return (
     <div>
 
     <nav>
-        <NavLink to='/'>Home</NavLink>
-        <NavLink to='/movies'>Movies</NavLink>
+        <StyledNavLink to='/'>Home</StyledNavLink>
+        <StyledNavLink to='/movies'>Movies</StyledNavLink>
     </nav>
 
     <main>

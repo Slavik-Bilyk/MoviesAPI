@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Link, Outlet, useLocation, useParams } from "react-router-dom";
-import { MovieTitle, Container, AboutMovie, MovieInfo, Button } from "./MovieDetails.styled";
+import { MovieTitle, StyledLink, Container, AboutMovie, MovieInfo, Button } from "./MovieDetails.styled";
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -44,7 +44,9 @@ const MovieDetails = () => {
     return <div>Loading...</div>;
   }
 
-
+const handleClick = link => {
+    setActiveLink(link)
+}
 
   const { title, original_title, name, overview, status, vote_average, poster_path, genres } = data;
 
@@ -68,14 +70,14 @@ const MovieDetails = () => {
         </MovieInfo>
       </AboutMovie>
       <h3>Additional information</h3>
-      <ul>
+      <ul style={{listStyle: 'none', display: 'flex'}}>
         <li>
-            <Link to='cast'>Cast</Link>
+            <StyledLink to='cast'>Cast</StyledLink>
 
         </li>
 
         <li>
-            <Link to='reviews'>Reviews</Link>
+            <StyledLink to='reviews'>Reviews</StyledLink>
         </li>
 
       </ul>
