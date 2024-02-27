@@ -3,6 +3,7 @@ import Layout from "./Layout"
 import Home from "pages/Home"
 import MovieDetails from "pages/MovieDetails"
 import Cast from "./Cast"
+import Reviews from "./Reviews"
 
 const App = () => {
 
@@ -13,7 +14,7 @@ const App = () => {
         <Route path="movies" element={<div>movies</div>} />
         <Route path="movies/:movieId" element={<MovieDetails />}>
           <Route path="cast" element={<Cast/>} />
-          <Route path="reviews" element={<div>reviews</div>} />
+          <Route path="reviews" element={<Reviews/>} />
         </Route>
       </Route>
     </Routes>
